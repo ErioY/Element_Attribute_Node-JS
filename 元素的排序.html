@@ -1,0 +1,53 @@
+<!--
+ * @Autor: ErioY
+ * @Date: 2019-09-01 11:35:39
+ * @Email: 1973545559@qq.com
+ * @Github: https://github.com/ErioY
+ * @LastEditors: ErioY
+ * @LastEditTime: 2019-09-01 11:51:09
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>元素的排序</title>
+    <style>
+    #li1 {
+        background-color: red;
+    }
+    #li2 {
+        background-color: blue;
+    }
+    #li3 {
+        background-color: yellow;
+    }
+    </style>
+</head>
+<body>
+    <button>翻转</button>
+    <ul>
+        <li id="li1"></li>
+        <li id="li2"></li>
+        <li id="li3"></li>
+    </ul>
+    
+    <script>
+    // 要求：每点击一次按钮，翻转li的颜色
+    var aLi = document.getElementsByTagName("li");
+    var oBtn = document.getElementsByTagName("button")[0];
+    var oUl = document.getElementsByTagName("ul")[0];
+    oBtn.onclick = function() {
+        // 伪数组转换为数组并翻转
+        var arr = Array.prototype.slice.call(aLi).reverse();
+        console.log(arr);
+        for (var i = 0; i < aLi.length; i++) {
+            // 在ul元素最后一个位置添加翻转后的元素
+            oUl.appendChild(arr[i]);
+        }
+    }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!--
+ * @Autor: ErioY
+ * @Date: 2019-09-01 10:30:22
+ * @Email: 1973545559@qq.com
+ * @Github: https://github.com/ErioY
+ * @LastEditors: ErioY
+ * @LastEditTime: 2019-09-01 11:04:48
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div:nth-of-type(1) {
+        width: 300px;
+        height: 300px;
+        background: green;
+        position: absolute;
+        left: 100px;
+        top: 100px;
+    }
+    div:nth-of-type(2) {
+        width: 200px;
+        height: 200px;
+        background: blue;
+        position: absolute;
+        left: 120px;
+        top: 120px;
+    }
+    div:nth-of-type(3) {
+        width: 100px;
+        height: 100px;
+        background: black;
+        position: absolute;
+        left: 150px;
+        top: 150px;
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+    oDiv3 = document.getElementsByTagName("div")[2];
+    function offset(obj) {
+        var arr = [0,0];
+        while (obj) {
+            arr[0] += obj.offsetLeft;
+            arr[1] += obj.offsetTop;
+            obj = obj.offsetParent;
+        }
+        return arr;
+    }
+    console.log(offset(oDiv3));
+    </script>
+</body>
+</html>
